@@ -8,8 +8,24 @@
 import SwiftUI
 
 struct GarageView: View {
+    
+    @State var showingCarForm: Bool = false
+
     var body: some View {
-        Text("Garage")
+        NavigationView {
+            
+            Button("Add your car") {
+                showingCarForm.toggle()
+            }
+            .sheet(isPresented: $showingCarForm) {
+                CarFormView()
+            }
+            
+        }
+    }
+    
+    func addBtnTapped() {
+        showingCarForm = true
     }
 }
 
