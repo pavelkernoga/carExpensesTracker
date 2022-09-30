@@ -8,99 +8,66 @@
 import Foundation
 
 enum CarBrands: String, CaseIterable {
-    case Acura
-    case alfaRomeo = "Alfa Romeo"
-//    case Audi
-//    case BMW
-//    case Citroen
-//    case Fiat
-//    case Ford
-//    case Honda
-//    case Hyundai
-//    case Kia
-//    case LADA
-//    case Mazda
-//    case mercedesBenz = "Mercedes-Benz"
-//    case Mitsubishi
-//    case Nissan
-//    case Opel
-//    case Peugeot
-//    case Renault
-//    case Skoda
-//    case Toyota
-//    case Volkswagen
-//    case Volvo
+    // A
+    case Acura; case AlfaRomeo = "Alfa Romeo"; case AstonMartin = "Aston Martin"; case Audi
     
-//    func getModel() -> String {
-//        return self.rawValue
-//    }
+    // B
+    case Bentley; case BMW; case Bugatti; case Buick;
     
-//    func getCarModels() ->[String] {
-//        switch self {
-//        case .Acura:
-//            return ["TL", "TSX", "MDX"]
-//        case .alfaRomeo:
-//            return ["TT", "BB", "VV"]
-//        }
-//    }
+    // C
+    case Cadillac; case Chery; case Chevrolet; case Chrysler; case Citroen
+    
+    // D
+    case Dacia; case Daewoo; case DAF; case Daihatsu; case Dodge
+    
+    // F
+    case Ferrari; case Fiat; case Ford
+    
+    // G
+    case Geely; case Genesis; case GMC; case GreatWall = "Great Wall"
+    
+    // H
+    case Haval; case Honda; case Hammer; case Hyundai
+    
+    // I
+    case Infinity; case IranKhodro = "Iran Khodro"; case Isuzu; case IVECO
+    
+    // J
+    case Jaguar; case Jeep
+    
+    // K
+    case Kia
+    
+    // L
+    case LADA; case Lamborghini; case Lancia; case LandRover = "Land Rover"; case Lexus; case Lifan; case Lincoln; case Lotus
+    
+    // M
+    case MAN; case Maserati; case Maybach; case Mazda; case McLaren; case MercedesBenz = "Mercedes-Benz"; case Mercury; case Mini; case Mitsubishi
+    
+    // N
+    case Nissan
+    
+    // O
+    case Opel
+    
+    // P
+    case Peugeot; case Plymouth; case Pontiac; case Porsche
+    
+    // R
+    case Ravon; case Renault; case RollsRoyce = "Rolls-Royce"; case Rover
+    
+    // S
+    case Saab; case Scion; case Seat; case Skoda; case Smart; case SsangYong; case Subaru; case Suzuki
+    
+    // T
+    case Tesla; case Toyota
+    
+    // V
+    case Volkswagen; case Volvo
+    
+    case ВАЗ; case Москвич; case УАЗ
 }
-
-
-
-enum Test: Hashable {    
-    static func == (lhs: Test, rhs: Test) -> Bool {
-        return lhs.getModel() == rhs.getModel()
-    }
-    
-    func hash(into hasher: inout Hasher) {
-          hasher.combine(getModel())
-      }
-    
-    case acura(models: CarModelss)
-    case honda(models: CarModelss)
-    
-    func getModel() -> [String] {
-        switch self {
-        case .acura(let models):
-            return models.acuraModels
-        case .honda(let models):
-            return models.hondaModels
-        }
-    }
-}
-
-struct CarModelss {
-    let acuraModels = ["TL", "TSX", "MDX"]
-    let hondaModels = ["Civic", "Accord", "CR-V"]
-    
-}
-
-struct CarModels: Hashable {
-    func getModels(brand: CarBrands) -> [String] {
-        switch brand {
-        case .Acura:
-            return ["TL", "TSX", "MDX"]
-        case .alfaRomeo:
-            return ["TT", "BB", "VV"]
-        }
-    }
-}
-
-//struct CarModels: Hashable {
-//
-//    func getModels(brands: CarBrands) -> [String] {
-//        switch brands {
-//        case .Acura:
-//            return ["TL", "TSX"]
-//        case .alfaRomeo:
-//            return ["Test", "Test2"]
-//        }
-//    }
-//
-//}
 
 extension CarBrands: Identifiable {
     var id: String { rawValue }
 }
-
-
