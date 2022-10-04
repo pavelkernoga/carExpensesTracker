@@ -15,19 +15,22 @@ struct ContentView: View {
         TabView {
             GarageView()
                 .tabItem {
-                    VStack {
-                        Text("My garage")
-                    }
+                    Label("My Garage", image: "my_garage")
                 }
                 .tag(0)
             
-            LogsView()
+            Expenses()
                 .tabItem {
-                    VStack {
-                        Text("Logs")
-                    }
+                   Label("Expenses", image: "wallet")
                 }
                 .tag(1)
+        }
+        .accentColor(.white)
+        
+        .onAppear {
+            UITabBarItem.appearance().setTitleTextAttributes([NSAttributedString.Key.font: UIFont.systemFont(ofSize: 15)], for: .normal)
+            UITabBarItem.appearance().setTitleTextAttributes([NSAttributedString.Key.font: UIFont.systemFont(ofSize: 15)], for: .selected)
+            UITabBar.appearance().unselectedItemTintColor = UIColor.white
         }
     }
 }

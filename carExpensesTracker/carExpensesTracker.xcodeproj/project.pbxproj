@@ -15,11 +15,12 @@
 		E990D08728E1CBCB00027BFA /* carExpensesTrackerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E990D08628E1CBCB00027BFA /* carExpensesTrackerUITests.swift */; };
 		E990D08928E1CBCB00027BFA /* carExpensesTrackerUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E990D08828E1CBCB00027BFA /* carExpensesTrackerUITestsLaunchTests.swift */; };
 		E990D09A28E1CDFC00027BFA /* GarageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E990D09928E1CDFC00027BFA /* GarageView.swift */; };
-		E990D09E28E1CFB800027BFA /* LogsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E990D09D28E1CFB800027BFA /* LogsView.swift */; };
+		E990D09E28E1CFB800027BFA /* Expenses.swift in Sources */ = {isa = PBXBuildFile; fileRef = E990D09D28E1CFB800027BFA /* Expenses.swift */; };
 		E990D0A028E1CFC800027BFA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E990D09F28E1CFC800027BFA /* ContentView.swift */; };
 		E9A5933028EC32B2000FF2EB /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9A5932F28EC32B2000FF2EB /* Constants.swift */; };
 		E9A5933328EC3819000FF2EB /* Color+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9A5933228EC3819000FF2EB /* Color+Extension.swift */; };
 		E9A5933C28ECB637000FF2EB /* MileageStates.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9A5933B28ECB637000FF2EB /* MileageStates.swift */; };
+		E9A5933E28ECBD13000FF2EB /* CarModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9A5933D28ECBD13000FF2EB /* CarModel.swift */; };
 		E9B1566928E6D839005DB1CF /* CarModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9B1566828E6D839005DB1CF /* CarModels.swift */; };
 		E9CE18F728E58547004A7676 /* SetupFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9CE18F628E58547004A7676 /* SetupFormView.swift */; };
 		E9CE18FA28E58607004A7676 /* CarBrands.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9CE18F928E58607004A7676 /* CarBrands.swift */; };
@@ -55,11 +56,12 @@
 		E990D08628E1CBCB00027BFA /* carExpensesTrackerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = carExpensesTrackerUITests.swift; sourceTree = "<group>"; };
 		E990D08828E1CBCB00027BFA /* carExpensesTrackerUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = carExpensesTrackerUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		E990D09928E1CDFC00027BFA /* GarageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GarageView.swift; sourceTree = "<group>"; };
-		E990D09D28E1CFB800027BFA /* LogsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogsView.swift; sourceTree = "<group>"; };
+		E990D09D28E1CFB800027BFA /* Expenses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Expenses.swift; sourceTree = "<group>"; };
 		E990D09F28E1CFC800027BFA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		E9A5932F28EC32B2000FF2EB /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		E9A5933228EC3819000FF2EB /* Color+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extension.swift"; sourceTree = "<group>"; };
 		E9A5933B28ECB637000FF2EB /* MileageStates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MileageStates.swift; sourceTree = "<group>"; };
+		E9A5933D28ECBD13000FF2EB /* CarModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarModel.swift; sourceTree = "<group>"; };
 		E9B1566828E6D839005DB1CF /* CarModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarModels.swift; sourceTree = "<group>"; };
 		E9CE18F628E58547004A7676 /* SetupFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupFormView.swift; sourceTree = "<group>"; };
 		E9CE18F928E58607004A7676 /* CarBrands.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarBrands.swift; sourceTree = "<group>"; };
@@ -157,17 +159,17 @@
 			children = (
 				E990D09F28E1CFC800027BFA /* ContentView.swift */,
 				E990D09528E1CD5800027BFA /* GarageModule */,
-				E990D09C28E1CF7900027BFA /* LogsModule */,
+				E990D09C28E1CF7900027BFA /* ExpensesModule */,
 			);
 			name = Views;
 			sourceTree = "<group>";
 		};
-		E990D09C28E1CF7900027BFA /* LogsModule */ = {
+		E990D09C28E1CF7900027BFA /* ExpensesModule */ = {
 			isa = PBXGroup;
 			children = (
-				E990D09D28E1CFB800027BFA /* LogsView.swift */,
+				E990D09D28E1CFB800027BFA /* Expenses.swift */,
 			);
-			path = LogsModule;
+			path = ExpensesModule;
 			sourceTree = "<group>";
 		};
 		E9A5932E28EC328D000FF2EB /* Utilites */ = {
@@ -186,12 +188,21 @@
 			name = Extensions;
 			sourceTree = "<group>";
 		};
-		E9CE18F828E585EE004A7676 /* Models */ = {
+		E9A5933F28ECC4FF000FF2EB /* Car */ = {
 			isa = PBXGroup;
 			children = (
+				E9A5933D28ECBD13000FF2EB /* CarModel.swift */,
 				E9CE18F928E58607004A7676 /* CarBrands.swift */,
 				E9B1566828E6D839005DB1CF /* CarModels.swift */,
 				E9A5933B28ECB637000FF2EB /* MileageStates.swift */,
+			);
+			name = Car;
+			sourceTree = "<group>";
+		};
+		E9CE18F828E585EE004A7676 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				E9A5933F28ECC4FF000FF2EB /* Car */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -334,7 +345,8 @@
 				E9A5933C28ECB637000FF2EB /* MileageStates.swift in Sources */,
 				E990D06628E1CBCA00027BFA /* AppDelegate.swift in Sources */,
 				E9CE18FA28E58607004A7676 /* CarBrands.swift in Sources */,
-				E990D09E28E1CFB800027BFA /* LogsView.swift in Sources */,
+				E9A5933E28ECBD13000FF2EB /* CarModel.swift in Sources */,
+				E990D09E28E1CFB800027BFA /* Expenses.swift in Sources */,
 				E990D06828E1CBCA00027BFA /* SceneDelegate.swift in Sources */,
 				E9CE18F728E58547004A7676 /* SetupFormView.swift in Sources */,
 			);

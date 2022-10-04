@@ -10,16 +10,31 @@ import SwiftUI
 struct GarageView: View {
     
     @State var showingCarForm: Bool = false
+    @State var car = CarModel()
 
     var body: some View {
         NavigationView {
             
-            Button("Add your car") {
-                showingCarForm.toggle()
+            if car.brand == nil {
+                Group {
+                    ZStack {
+                        Image("garage")
+                            .resizable()
+                            .aspectRatio(contentMode: .fill).edgesIgnoringSafeArea(.all)
+                        
+                        
+                        Button("Add your car") {
+                            showingCarForm.toggle()
+                        }
+                        .multilineTextAlignment(.center)
+                        .font(.headline)
+                        .sheet(isPresented: $showingCarForm) {
+                            SetupFormView()
+                        }
+                    }
+                }
             }
-            .sheet(isPresented: $showingCarForm) {
-                SetupFormView()
-            }
+            
             
         }
     }
