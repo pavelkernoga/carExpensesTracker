@@ -31,57 +31,29 @@ struct CarFormView: View {
                     }
                 }
                 
-                Text("Model:").foregroundColor(.black).font(.headline)
-                
-                // Car models
-                
-                    List(model.getModels(brand: selectedBrand), id: \.self) { model in
-                    HStack {
-                        Text("\(model)").frame(maxWidth: .infinity, alignment: .center)
-                            .overlay(RoundedRectangle(cornerRadius: 10)
-                            .stroke(.blue, lineWidth: 1))
-                        
-                        
-                        .frame(height: 44)
-                        Spacer()
-                        
-                        Button("") { selectedModel = model }
-                        .background(selectModel(id: model))
+                // Car model
+                List() {
+                    Section(header: Text("Model:").foregroundColor(.black).font(.headline)) {
+                        ForEach(model.getModels(brand: selectedBrand), id: \.self) { model in
+                            HStack {
+                                Text("\(model)").frame(maxWidth: .infinity, alignment: .center)
+                                Button("") { selectedModel = model }
+                                .background(selectModel(id: model))
+                            }
+                            .listRowBackground(Colors.listRowBackroundCustomColor)
+                            .foregroundColor(.black)
+                            .listRowSeparator(.visible)
+                            .listRowSeparatorTint(.gray)
+                        }
                     }
-                    .foregroundColor(.green)
-                    .listRowSeparator(.hidden)
-                    .listStyle(.insetGrouped)
-                    }
-                
-//                    .listStyle(.automatic)
-                
-                // working
-//                Picker(selection: $model, label: Text("Model")) {
-//                    List(model.getModels(brand: selectedBrand), id: \.self) { model in
-//                        Text(model).tag(model)
-//                            .onTapGesture {
-//                                if selectedModel.contains(model) {
-//                                    selectedModel.remove(model)
-//                                } else {
-//                                    selectedModel.insert(model)
-//                                }
-//                                print(model)
-//                            }
-//                    }
-                    
-                    //working also
-//                    ForEach(models.getModels(brands: brand), id: \.self) { model in
-//                        Text(model).tag(model)
-//                    }
-//                }
-                
+                }
             }
             
             // Navigation items
             .navigationBarItems(
-                leading: Button(action: self.cancelButtontapped) {
+                leading: Button(action: self.cancelButtonTapped) {
                     Text("Cancel").foregroundColor(.red)},
-                trailing: Button(action: self.saveButtontapped) {
+                trailing: Button(action: self.saveButtonTapped) {
                     Text("Save")}
             ).navigationBarTitle(navigationTitle)
         }
@@ -96,11 +68,11 @@ struct CarFormView: View {
         ).hidden()
     }
     
-    private func cancelButtontapped() {
+    private func cancelButtonTapped() {
         self.presentationMode.wrappedValue.dismiss()
     }
     
-    private func saveButtontapped() {
+    private func saveButtonTapped() {
         print("save car into db")
     }
 
