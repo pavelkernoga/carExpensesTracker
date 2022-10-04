@@ -18,7 +18,7 @@ struct GarageView: View {
                 showingCarForm.toggle()
             }
             .sheet(isPresented: $showingCarForm) {
-                CarFormView()
+                SetupFormView()
             }
             
         }

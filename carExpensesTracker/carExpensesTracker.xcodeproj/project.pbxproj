@@ -17,9 +17,11 @@
 		E990D09A28E1CDFC00027BFA /* GarageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E990D09928E1CDFC00027BFA /* GarageView.swift */; };
 		E990D09E28E1CFB800027BFA /* LogsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E990D09D28E1CFB800027BFA /* LogsView.swift */; };
 		E990D0A028E1CFC800027BFA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E990D09F28E1CFC800027BFA /* ContentView.swift */; };
-		E9A5933028EC32B2000FF2EB /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9A5932F28EC32B2000FF2EB /* Colors.swift */; };
+		E9A5933028EC32B2000FF2EB /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9A5932F28EC32B2000FF2EB /* Constants.swift */; };
+		E9A5933328EC3819000FF2EB /* Color+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9A5933228EC3819000FF2EB /* Color+Extension.swift */; };
+		E9A5933C28ECB637000FF2EB /* MileageStates.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9A5933B28ECB637000FF2EB /* MileageStates.swift */; };
 		E9B1566928E6D839005DB1CF /* CarModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9B1566828E6D839005DB1CF /* CarModels.swift */; };
-		E9CE18F728E58547004A7676 /* CarFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9CE18F628E58547004A7676 /* CarFormView.swift */; };
+		E9CE18F728E58547004A7676 /* SetupFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9CE18F628E58547004A7676 /* SetupFormView.swift */; };
 		E9CE18FA28E58607004A7676 /* CarBrands.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9CE18F928E58607004A7676 /* CarBrands.swift */; };
 /* End PBXBuildFile section */
 
@@ -55,9 +57,11 @@
 		E990D09928E1CDFC00027BFA /* GarageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GarageView.swift; sourceTree = "<group>"; };
 		E990D09D28E1CFB800027BFA /* LogsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogsView.swift; sourceTree = "<group>"; };
 		E990D09F28E1CFC800027BFA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		E9A5932F28EC32B2000FF2EB /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		E9A5932F28EC32B2000FF2EB /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		E9A5933228EC3819000FF2EB /* Color+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extension.swift"; sourceTree = "<group>"; };
+		E9A5933B28ECB637000FF2EB /* MileageStates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MileageStates.swift; sourceTree = "<group>"; };
 		E9B1566828E6D839005DB1CF /* CarModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarModels.swift; sourceTree = "<group>"; };
-		E9CE18F628E58547004A7676 /* CarFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarFormView.swift; sourceTree = "<group>"; };
+		E9CE18F628E58547004A7676 /* SetupFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupFormView.swift; sourceTree = "<group>"; };
 		E9CE18F928E58607004A7676 /* CarBrands.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarBrands.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -109,11 +113,12 @@
 		E990D06428E1CBCA00027BFA /* carExpensesTracker */ = {
 			isa = PBXGroup;
 			children = (
+				E9A5933128EC37FF000FF2EB /* Extensions */,
 				E9A5932E28EC328D000FF2EB /* Utilites */,
 				E9CE18F828E585EE004A7676 /* Models */,
+				E990D09B28E1CF6A00027BFA /* Views */,
 				E990D06528E1CBCA00027BFA /* AppDelegate.swift */,
 				E990D06728E1CBCA00027BFA /* SceneDelegate.swift */,
-				E990D09B28E1CF6A00027BFA /* Views */,
 				E990D06E28E1CBCB00027BFA /* Assets.xcassets */,
 				E990D07028E1CBCB00027BFA /* LaunchScreen.storyboard */,
 				E990D07328E1CBCB00027BFA /* Info.plist */,
@@ -142,7 +147,7 @@
 			isa = PBXGroup;
 			children = (
 				E990D09928E1CDFC00027BFA /* GarageView.swift */,
-				E9CE18F628E58547004A7676 /* CarFormView.swift */,
+				E9CE18F628E58547004A7676 /* SetupFormView.swift */,
 			);
 			path = GarageModule;
 			sourceTree = "<group>";
@@ -168,9 +173,17 @@
 		E9A5932E28EC328D000FF2EB /* Utilites */ = {
 			isa = PBXGroup;
 			children = (
-				E9A5932F28EC32B2000FF2EB /* Colors.swift */,
+				E9A5932F28EC32B2000FF2EB /* Constants.swift */,
 			);
 			name = Utilites;
+			sourceTree = "<group>";
+		};
+		E9A5933128EC37FF000FF2EB /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				E9A5933228EC3819000FF2EB /* Color+Extension.swift */,
+			);
+			name = Extensions;
 			sourceTree = "<group>";
 		};
 		E9CE18F828E585EE004A7676 /* Models */ = {
@@ -178,6 +191,7 @@
 			children = (
 				E9CE18F928E58607004A7676 /* CarBrands.swift */,
 				E9B1566828E6D839005DB1CF /* CarModels.swift */,
+				E9A5933B28ECB637000FF2EB /* MileageStates.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -313,14 +327,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				E990D09A28E1CDFC00027BFA /* GarageView.swift in Sources */,
-				E9A5933028EC32B2000FF2EB /* Colors.swift in Sources */,
+				E9A5933328EC3819000FF2EB /* Color+Extension.swift in Sources */,
+				E9A5933028EC32B2000FF2EB /* Constants.swift in Sources */,
 				E9B1566928E6D839005DB1CF /* CarModels.swift in Sources */,
 				E990D0A028E1CFC800027BFA /* ContentView.swift in Sources */,
+				E9A5933C28ECB637000FF2EB /* MileageStates.swift in Sources */,
 				E990D06628E1CBCA00027BFA /* AppDelegate.swift in Sources */,
 				E9CE18FA28E58607004A7676 /* CarBrands.swift in Sources */,
 				E990D09E28E1CFB800027BFA /* LogsView.swift in Sources */,
 				E990D06828E1CBCA00027BFA /* SceneDelegate.swift in Sources */,
-				E9CE18F728E58547004A7676 /* CarFormView.swift in Sources */,
+				E9CE18F728E58547004A7676 /* SetupFormView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
