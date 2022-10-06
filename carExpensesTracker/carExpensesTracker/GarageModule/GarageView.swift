@@ -6,23 +6,23 @@
 //
 
 import SwiftUI
+import grpc
 
 struct GarageView: View {
     
-    @State var showingCarForm: Bool = false
-    @State var car: CarModel?
-
+    @State private var showingCarForm: Bool = false
+    @ObservedObject private var carViewModel = CarViewModel()
+    
     var body: some View {
+        
         NavigationView {
-            
-            if car?.brand == nil {
-                Group {
-                    ZStack {
-                        Image("garage")
-                            .resizable()
-                            .aspectRatio(contentMode: .fill).edgesIgnoringSafeArea(.all)
-                        
-                        
+            Group {
+                ZStack {
+                    Image("garage")
+                        .resizable()
+                        .aspectRatio(contentMode: .fill).edgesIgnoringSafeArea(.all)
+                    
+                    VStack {
                         Button("Add your car") {
                             showingCarForm.toggle()
                         }
@@ -31,15 +31,24 @@ struct GarageView: View {
                         .sheet(isPresented: $showingCarForm) {
                             SetupFormView()
                         }
+                        
+                        // test
+                        ForEach(carViewModel.cars, id: \.self) { car in
+                            VStack(alignment: .leading) {
+                                Text(car.brand).foregroundColor(Color.white)
+                                Text(car.model).foregroundColor(Color.white)
+                                Text("\(Constants.numberFormatter.string(for: car.productionYear) ?? "2022")").foregroundColor(Color.white)
+                                Text(car.mileage).foregroundColor(Color.white)
+                                Text(car.mileageState).foregroundColor(Color.white)
+                            }
+                        }
                     }
                 }
-            } else {
-//                Text("\(car.brand?.rawValue ?? "r")")
             }
             
         }
         .onAppear {
-            print("\(car?.brand)")
+            self.carViewModel.fetchData()
         }
     }
     

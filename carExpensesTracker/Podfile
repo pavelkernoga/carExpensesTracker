@@ -7,10 +7,9 @@ target 'carExpensesTracker' do
 
   # Pods for carExpensesTracker
   pod 'FirebaseAnalytics'
-  pod 'Firebase/Firestore'
-  pod 'FirebaseDatabase'
-  pod 'Firebase/Storage'
-  pod 'Firebase/Analytics'
+  pod 'FirebaseCore'
+  pod 'FirebaseFirestore'
+  pod 'FirebaseStorage'
 
   target 'carExpensesTrackerTests' do
     inherit! :search_paths
@@ -21,4 +20,11 @@ target 'carExpensesTracker' do
     # Pods for testing
   end
 
+end
+
+post_install do |installer|
+  installer.pods_project.build_configurations.each do |config|
+    config.build_settings["EXCLUDED_ARCHS[sdk=iphonesimulator*]"] = "arm64"
+    config.build_settings['BUILD_LIBRARY_FOR_DISTRIBUTION'] = 'YES'
+  end
 end

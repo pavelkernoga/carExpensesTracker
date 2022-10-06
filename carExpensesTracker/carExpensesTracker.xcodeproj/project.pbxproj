@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5F3BD013BF137D18C4A5C138 /* Pods_carExpensesTracker_carExpensesTrackerUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6B0D07BF6BBE03DF927D0E6 /* Pods_carExpensesTracker_carExpensesTrackerUITests.framework */; };
+		A1E4E4A2538403D18BD326C7 /* Pods_carExpensesTrackerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 709B753367B6309665D4B21A /* Pods_carExpensesTrackerTests.framework */; };
+		E901922828EED26D0054C777 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E901922728EED26D0054C777 /* APIManager.swift */; };
+		E901922B28EED3730054C777 /* Document.swift in Sources */ = {isa = PBXBuildFile; fileRef = E901922A28EED3730054C777 /* Document.swift */; };
+		E901922E28EF5A630054C777 /* CarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E901922D28EF5A630054C777 /* CarViewModel.swift */; };
+		E901923228EF89850054C777 /* FirebaseCarModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E901923128EF89850054C777 /* FirebaseCarModel.swift */; };
 		E926886F28EE319300EF0ED8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E9F2653028EE1D4A005CF74A /* GoogleService-Info.plist */; };
 		E990D06628E1CBCA00027BFA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E990D06528E1CBCA00027BFA /* AppDelegate.swift */; };
 		E990D06828E1CBCA00027BFA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E990D06728E1CBCA00027BFA /* SceneDelegate.swift */; };
@@ -21,11 +27,12 @@
 		E9A5933028EC32B2000FF2EB /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9A5932F28EC32B2000FF2EB /* Constants.swift */; };
 		E9A5933328EC3819000FF2EB /* Color+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9A5933228EC3819000FF2EB /* Color+Extension.swift */; };
 		E9A5933C28ECB637000FF2EB /* MileageStates.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9A5933B28ECB637000FF2EB /* MileageStates.swift */; };
-		E9A5933E28ECBD13000FF2EB /* CarModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9A5933D28ECBD13000FF2EB /* CarModel.swift */; };
+		E9A5933E28ECBD13000FF2EB /* Car.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9A5933D28ECBD13000FF2EB /* Car.swift */; };
 		E9B1566928E6D839005DB1CF /* CarModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9B1566828E6D839005DB1CF /* CarModels.swift */; };
 		E9CE18F728E58547004A7676 /* SetupFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9CE18F628E58547004A7676 /* SetupFormView.swift */; };
 		E9CE18FA28E58607004A7676 /* CarBrands.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9CE18F928E58607004A7676 /* CarBrands.swift */; };
-		E9D6C26E28EE37680087404F /* BuildFile in Embed Frameworks */ = {isa = PBXBuildFile; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		E9D6C26E28EE37680087404F /* (null) in Embed Frameworks */ = {isa = PBXBuildFile; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		FBEA9D58B36916B138E5CA30 /* Pods_carExpensesTracker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 787D40CD474BA6A8544A5AEE /* Pods_carExpensesTracker.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,7 +59,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				E9D6C26E28EE37680087404F /* BuildFile in Embed Frameworks */,
+				E9D6C26E28EE37680087404F /* (null) in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -60,6 +67,19 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0456F7AE433C530A3FF81E14 /* Pods-carExpensesTrackerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-carExpensesTrackerTests.release.xcconfig"; path = "Target Support Files/Pods-carExpensesTrackerTests/Pods-carExpensesTrackerTests.release.xcconfig"; sourceTree = "<group>"; };
+		07042E1E3EF37419ECD5AD3A /* Pods-carExpensesTracker-carExpensesTrackerUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-carExpensesTracker-carExpensesTrackerUITests.release.xcconfig"; path = "Target Support Files/Pods-carExpensesTracker-carExpensesTrackerUITests/Pods-carExpensesTracker-carExpensesTrackerUITests.release.xcconfig"; sourceTree = "<group>"; };
+		10F73AB91E16793D9EF2FEAB /* Pods-carExpensesTracker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-carExpensesTracker.debug.xcconfig"; path = "Target Support Files/Pods-carExpensesTracker/Pods-carExpensesTracker.debug.xcconfig"; sourceTree = "<group>"; };
+		138FE5D1847A02E64A0699C2 /* Pods-carExpensesTracker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-carExpensesTracker.release.xcconfig"; path = "Target Support Files/Pods-carExpensesTracker/Pods-carExpensesTracker.release.xcconfig"; sourceTree = "<group>"; };
+		4A1143326AD7A6B4E5AE616D /* Pods-carExpensesTrackerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-carExpensesTrackerTests.debug.xcconfig"; path = "Target Support Files/Pods-carExpensesTrackerTests/Pods-carExpensesTrackerTests.debug.xcconfig"; sourceTree = "<group>"; };
+		709B753367B6309665D4B21A /* Pods_carExpensesTrackerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_carExpensesTrackerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		787D40CD474BA6A8544A5AEE /* Pods_carExpensesTracker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_carExpensesTracker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		86D35EC8E1145BC353B9C860 /* Pods-carExpensesTracker-carExpensesTrackerUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-carExpensesTracker-carExpensesTrackerUITests.debug.xcconfig"; path = "Target Support Files/Pods-carExpensesTracker-carExpensesTrackerUITests/Pods-carExpensesTracker-carExpensesTrackerUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		C6B0D07BF6BBE03DF927D0E6 /* Pods_carExpensesTracker_carExpensesTrackerUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_carExpensesTracker_carExpensesTrackerUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E901922728EED26D0054C777 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
+		E901922A28EED3730054C777 /* Document.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Document.swift; sourceTree = "<group>"; };
+		E901922D28EF5A630054C777 /* CarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarViewModel.swift; sourceTree = "<group>"; };
+		E901923128EF89850054C777 /* FirebaseCarModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseCarModel.swift; sourceTree = "<group>"; };
 		E926886B28EE313D00EF0ED8 /* FirebaseCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = FirebaseCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E990D06228E1CBCA00027BFA /* carExpensesTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = carExpensesTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E990D06528E1CBCA00027BFA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -78,7 +98,7 @@
 		E9A5932F28EC32B2000FF2EB /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		E9A5933228EC3819000FF2EB /* Color+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extension.swift"; sourceTree = "<group>"; };
 		E9A5933B28ECB637000FF2EB /* MileageStates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MileageStates.swift; sourceTree = "<group>"; };
-		E9A5933D28ECBD13000FF2EB /* CarModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarModel.swift; sourceTree = "<group>"; };
+		E9A5933D28ECBD13000FF2EB /* Car.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Car.swift; sourceTree = "<group>"; };
 		E9B1566828E6D839005DB1CF /* CarModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarModels.swift; sourceTree = "<group>"; };
 		E9CE18F628E58547004A7676 /* SetupFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupFormView.swift; sourceTree = "<group>"; };
 		E9CE18F928E58607004A7676 /* CarBrands.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarBrands.swift; sourceTree = "<group>"; };
@@ -92,6 +112,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FBEA9D58B36916B138E5CA30 /* Pods_carExpensesTracker.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -99,6 +120,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A1E4E4A2538403D18BD326C7 /* Pods_carExpensesTrackerTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -106,6 +128,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5F3BD013BF137D18C4A5C138 /* Pods_carExpensesTracker_carExpensesTrackerUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -115,8 +138,39 @@
 		82E6804E6065E940ECECB33F /* Pods */ = {
 			isa = PBXGroup;
 			children = (
+				10F73AB91E16793D9EF2FEAB /* Pods-carExpensesTracker.debug.xcconfig */,
+				138FE5D1847A02E64A0699C2 /* Pods-carExpensesTracker.release.xcconfig */,
+				86D35EC8E1145BC353B9C860 /* Pods-carExpensesTracker-carExpensesTrackerUITests.debug.xcconfig */,
+				07042E1E3EF37419ECD5AD3A /* Pods-carExpensesTracker-carExpensesTrackerUITests.release.xcconfig */,
+				4A1143326AD7A6B4E5AE616D /* Pods-carExpensesTrackerTests.debug.xcconfig */,
+				0456F7AE433C530A3FF81E14 /* Pods-carExpensesTrackerTests.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		E901922628EED25A0054C777 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				E901922728EED26D0054C777 /* APIManager.swift */,
+			);
+			name = Managers;
+			sourceTree = "<group>";
+		};
+		E901922928EED3600054C777 /* Firebase */ = {
+			isa = PBXGroup;
+			children = (
+				E901922A28EED3730054C777 /* Document.swift */,
+				E901923128EF89850054C777 /* FirebaseCarModel.swift */,
+			);
+			name = Firebase;
+			sourceTree = "<group>";
+		};
+		E901922C28EF5A480054C777 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				E901922D28EF5A630054C777 /* CarViewModel.swift */,
+			);
+			name = ViewModels;
 			sourceTree = "<group>";
 		};
 		E990D05928E1CBCA00027BFA = {
@@ -144,7 +198,8 @@
 		E990D06428E1CBCA00027BFA /* carExpensesTracker */ = {
 			isa = PBXGroup;
 			children = (
-				E9F2653028EE1D4A005CF74A /* GoogleService-Info.plist */,
+				E901922C28EF5A480054C777 /* ViewModels */,
+				E901922628EED25A0054C777 /* Managers */,
 				E9A5933128EC37FF000FF2EB /* Extensions */,
 				E9A5932E28EC328D000FF2EB /* Utilites */,
 				E9CE18F828E585EE004A7676 /* Models */,
@@ -153,6 +208,7 @@
 				E990D06728E1CBCA00027BFA /* SceneDelegate.swift */,
 				E990D06E28E1CBCB00027BFA /* Assets.xcassets */,
 				E990D07028E1CBCB00027BFA /* LaunchScreen.storyboard */,
+				E9F2653028EE1D4A005CF74A /* GoogleService-Info.plist */,
 				E990D07328E1CBCB00027BFA /* Info.plist */,
 			);
 			path = carExpensesTracker;
@@ -221,7 +277,7 @@
 		E9A5933F28ECC4FF000FF2EB /* Car */ = {
 			isa = PBXGroup;
 			children = (
-				E9A5933D28ECBD13000FF2EB /* CarModel.swift */,
+				E9A5933D28ECBD13000FF2EB /* Car.swift */,
 				E9CE18F928E58607004A7676 /* CarBrands.swift */,
 				E9B1566828E6D839005DB1CF /* CarModels.swift */,
 				E9A5933B28ECB637000FF2EB /* MileageStates.swift */,
@@ -232,6 +288,7 @@
 		E9CE18F828E585EE004A7676 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				E901922928EED3600054C777 /* Firebase */,
 				E9A5933F28ECC4FF000FF2EB /* Car */,
 			);
 			name = Models;
@@ -243,6 +300,9 @@
 				E9D6C26928EE373C0087404F /* FirebaseCore.framework */,
 				E926886B28EE313D00EF0ED8 /* FirebaseCore.framework */,
 				E9F2653228EE2F50005CF74A /* FirebaseCore.framework */,
+				787D40CD474BA6A8544A5AEE /* Pods_carExpensesTracker.framework */,
+				C6B0D07BF6BBE03DF927D0E6 /* Pods_carExpensesTracker_carExpensesTrackerUITests.framework */,
+				709B753367B6309665D4B21A /* Pods_carExpensesTrackerTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -254,10 +314,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E990D08C28E1CBCB00027BFA /* Build configuration list for PBXNativeTarget "carExpensesTracker" */;
 			buildPhases = (
+				78ADBCB27EDF835CBE124BB6 /* [CP] Check Pods Manifest.lock */,
 				E990D05E28E1CBCA00027BFA /* Sources */,
 				E990D05F28E1CBCA00027BFA /* Frameworks */,
 				E990D06028E1CBCA00027BFA /* Resources */,
 				E9D6C26F28EE37680087404F /* Embed Frameworks */,
+				85298C98765588D9A9D44B35 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -272,6 +334,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E990D08F28E1CBCB00027BFA /* Build configuration list for PBXNativeTarget "carExpensesTrackerTests" */;
 			buildPhases = (
+				874FA2F9A0EA697A9E45C9EF /* [CP] Check Pods Manifest.lock */,
 				E990D07428E1CBCB00027BFA /* Sources */,
 				E990D07528E1CBCB00027BFA /* Frameworks */,
 				E990D07628E1CBCB00027BFA /* Resources */,
@@ -290,9 +353,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E990D09228E1CBCB00027BFA /* Build configuration list for PBXNativeTarget "carExpensesTrackerUITests" */;
 			buildPhases = (
+				79C48A4E9636C9CBB0530001 /* [CP] Check Pods Manifest.lock */,
 				E990D07E28E1CBCB00027BFA /* Sources */,
 				E990D07F28E1CBCB00027BFA /* Frameworks */,
 				E990D08028E1CBCB00027BFA /* Resources */,
+				1A9123432547DF1092DA7753 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -374,6 +439,109 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		1A9123432547DF1092DA7753 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-carExpensesTracker-carExpensesTrackerUITests/Pods-carExpensesTracker-carExpensesTrackerUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-carExpensesTracker-carExpensesTrackerUITests/Pods-carExpensesTracker-carExpensesTrackerUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-carExpensesTracker-carExpensesTrackerUITests/Pods-carExpensesTracker-carExpensesTrackerUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		78ADBCB27EDF835CBE124BB6 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-carExpensesTracker-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		79C48A4E9636C9CBB0530001 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-carExpensesTracker-carExpensesTrackerUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		85298C98765588D9A9D44B35 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-carExpensesTracker/Pods-carExpensesTracker-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-carExpensesTracker/Pods-carExpensesTracker-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-carExpensesTracker/Pods-carExpensesTracker-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		874FA2F9A0EA697A9E45C9EF /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-carExpensesTrackerTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		E990D05E28E1CBCA00027BFA /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -386,10 +554,14 @@
 				E990D0A028E1CFC800027BFA /* ContentView.swift in Sources */,
 				E9A5933C28ECB637000FF2EB /* MileageStates.swift in Sources */,
 				E990D06628E1CBCA00027BFA /* AppDelegate.swift in Sources */,
+				E901922E28EF5A630054C777 /* CarViewModel.swift in Sources */,
 				E9CE18FA28E58607004A7676 /* CarBrands.swift in Sources */,
-				E9A5933E28ECBD13000FF2EB /* CarModel.swift in Sources */,
+				E901923228EF89850054C777 /* FirebaseCarModel.swift in Sources */,
+				E9A5933E28ECBD13000FF2EB /* Car.swift in Sources */,
 				E990D09E28E1CFB800027BFA /* Expenses.swift in Sources */,
+				E901922828EED26D0054C777 /* APIManager.swift in Sources */,
 				E990D06828E1CBCA00027BFA /* SceneDelegate.swift in Sources */,
+				E901922B28EED3730054C777 /* Document.swift in Sources */,
 				E9CE18F728E58547004A7676 /* SetupFormView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -558,6 +730,7 @@
 		};
 		E990D08D28E1CBCB00027BFA /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 10F73AB91E16793D9EF2FEAB /* Pods-carExpensesTracker.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -571,6 +744,7 @@
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -586,6 +760,7 @@
 		};
 		E990D08E28E1CBCB00027BFA /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 138FE5D1847A02E64A0699C2 /* Pods-carExpensesTracker.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -599,6 +774,7 @@
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -614,6 +790,7 @@
 		};
 		E990D09028E1CBCB00027BFA /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4A1143326AD7A6B4E5AE616D /* Pods-carExpensesTrackerTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -639,6 +816,7 @@
 		};
 		E990D09128E1CBCB00027BFA /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0456F7AE433C530A3FF81E14 /* Pods-carExpensesTrackerTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -664,6 +842,7 @@
 		};
 		E990D09328E1CBCB00027BFA /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 86D35EC8E1145BC353B9C860 /* Pods-carExpensesTracker-carExpensesTrackerUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -687,6 +866,7 @@
 		};
 		E990D09428E1CBCB00027BFA /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 07042E1E3EF37419ECD5AD3A /* Pods-carExpensesTracker-carExpensesTrackerUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

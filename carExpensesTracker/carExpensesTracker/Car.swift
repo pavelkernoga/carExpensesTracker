@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct CarModel {
+struct Car {
     var brand: CarBrands?
     var model: String?
     var productionYear: Int?

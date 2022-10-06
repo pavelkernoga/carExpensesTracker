@@ -18,15 +18,7 @@ struct SetupFormView: View {
     @State var selectedModel: String = ""
     @State var yearOfProduction = Int()
     @State var mileage: String = ""
-    @State var mileageState: MileageStates = .km
-    @State var car = CarModel()
-    
-    
-    private let numberFormatter: NumberFormatter = {
-        let nf = NumberFormatter()
-        nf.usesGroupingSeparator = false
-        return nf
-    }()
+    @State var mileageState: MileageStates = .km    
     
     var body: some View {
         NavigationView {
@@ -51,16 +43,16 @@ struct SetupFormView: View {
                 }
                 
                 // Year of production
-                    Picker(selection: $yearOfProduction, label: Text("Year of production")) {
-                        ForEach((1950..<2022).reversed(), id: \.self) { year in
-                            HStack {
-                                Text("\(numberFormatter.string(for: year) ?? "2022")")
-                                    .onTapGesture {
-                                        yearOfProduction = year
-                                    }
-                            }
+                Picker(selection: $yearOfProduction, label: Text("Year of production")) {
+                    ForEach((1950..<2022).reversed(), id: \.self) { year in
+                        HStack {
+                            Text("\(Constants.numberFormatter.string(for: year) ?? "2022")")
+                                .onTapGesture {
+                                    yearOfProduction = year
+                                }
                         }
                     }
+                }
                 
                 // Mileage
                 HStack {
@@ -92,14 +84,18 @@ struct SetupFormView: View {
     }
     
     private func saveButtonTapped() {
-        car.brand = selectedBrand
-        car.model = selectedModel
-        car.productionYear = yearOfProduction
-        car.mileage = mileage
-        car.mileageState = mileageState
+        APIManager.shared.addCarData(brand: "\(selectedBrand)", data: getSelectedCarData())
         self.presentationMode.wrappedValue.dismiss()
-        GarageView().car = car
-//        print("\(selectedBrand) \(selectedModel), year: \(yearOfProduction), mileage: \(mileage) \(mileageState)")
+    }
+    
+    private func getSelectedCarData() -> [String: Any] {
+        let data: [String: Any] = [
+            "model": selectedModel,
+            "year": yearOfProduction,
+            "mileage": mileage,
+            "mileageState": "\(mileageState)"
+        ]
+        return data
     }
 
 }
