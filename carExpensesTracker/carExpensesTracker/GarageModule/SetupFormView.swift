@@ -19,6 +19,7 @@ struct SetupFormView: View {
     @State var yearOfProduction = Int()
     @State var mileage: String = ""
     @State var mileageState: MileageStates = .km
+    @State var car = CarModel()
     
     
     private let numberFormatter: NumberFormatter = {
@@ -91,7 +92,14 @@ struct SetupFormView: View {
     }
     
     private func saveButtonTapped() {
-        print("\(selectedBrand) \(selectedModel), year: \(yearOfProduction), mileage: \(mileage) \(mileageState)")
+        car.brand = selectedBrand
+        car.model = selectedModel
+        car.productionYear = yearOfProduction
+        car.mileage = mileage
+        car.mileageState = mileageState
+        self.presentationMode.wrappedValue.dismiss()
+        GarageView().car = car
+//        print("\(selectedBrand) \(selectedModel), year: \(yearOfProduction), mileage: \(mileage) \(mileageState)")
     }
 
 }

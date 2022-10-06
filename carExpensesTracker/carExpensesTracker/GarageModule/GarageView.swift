@@ -10,12 +10,12 @@ import SwiftUI
 struct GarageView: View {
     
     @State var showingCarForm: Bool = false
-    @State var car = CarModel()
+    @State var car: CarModel?
 
     var body: some View {
         NavigationView {
             
-            if car.brand == nil {
+            if car?.brand == nil {
                 Group {
                     ZStack {
                         Image("garage")
@@ -33,9 +33,13 @@ struct GarageView: View {
                         }
                     }
                 }
+            } else {
+//                Text("\(car.brand?.rawValue ?? "r")")
             }
             
-            
+        }
+        .onAppear {
+            print("\(car?.brand)")
         }
     }
     

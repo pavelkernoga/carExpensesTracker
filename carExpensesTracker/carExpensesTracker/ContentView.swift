@@ -28,10 +28,14 @@ struct ContentView: View {
         .accentColor(.white)
         
         .onAppear {
-            UITabBarItem.appearance().setTitleTextAttributes([NSAttributedString.Key.font: UIFont.systemFont(ofSize: 15)], for: .normal)
-            UITabBarItem.appearance().setTitleTextAttributes([NSAttributedString.Key.font: UIFont.systemFont(ofSize: 15)], for: .selected)
-            UITabBar.appearance().unselectedItemTintColor = UIColor.white
+            setUpTabBarAppearance()
         }
+    }
+    
+    private func setUpTabBarAppearance() {
+        UITabBarItem.appearance().setTitleTextAttributes([NSAttributedString.Key.font: UIFont.systemFont(ofSize: 15)], for: .normal)
+        UITabBarItem.appearance().setTitleTextAttributes([NSAttributedString.Key.font: UIFont.systemFont(ofSize: 15)], for: .selected)
+        UITabBar.appearance().unselectedItemTintColor = UIColor.white
     }
 }
 

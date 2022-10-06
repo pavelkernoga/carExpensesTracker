@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E926886F28EE319300EF0ED8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E9F2653028EE1D4A005CF74A /* GoogleService-Info.plist */; };
 		E990D06628E1CBCA00027BFA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E990D06528E1CBCA00027BFA /* AppDelegate.swift */; };
 		E990D06828E1CBCA00027BFA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E990D06728E1CBCA00027BFA /* SceneDelegate.swift */; };
 		E990D06F28E1CBCB00027BFA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E990D06E28E1CBCB00027BFA /* Assets.xcassets */; };
@@ -24,6 +25,7 @@
 		E9B1566928E6D839005DB1CF /* CarModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9B1566828E6D839005DB1CF /* CarModels.swift */; };
 		E9CE18F728E58547004A7676 /* SetupFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9CE18F628E58547004A7676 /* SetupFormView.swift */; };
 		E9CE18FA28E58607004A7676 /* CarBrands.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9CE18F928E58607004A7676 /* CarBrands.swift */; };
+		E9D6C26E28EE37680087404F /* BuildFile in Embed Frameworks */ = {isa = PBXBuildFile; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,7 +45,22 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		E9D6C26F28EE37680087404F /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				E9D6C26E28EE37680087404F /* BuildFile in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		E926886B28EE313D00EF0ED8 /* FirebaseCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = FirebaseCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E990D06228E1CBCA00027BFA /* carExpensesTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = carExpensesTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E990D06528E1CBCA00027BFA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E990D06728E1CBCA00027BFA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -65,6 +82,9 @@
 		E9B1566828E6D839005DB1CF /* CarModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarModels.swift; sourceTree = "<group>"; };
 		E9CE18F628E58547004A7676 /* SetupFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupFormView.swift; sourceTree = "<group>"; };
 		E9CE18F928E58607004A7676 /* CarBrands.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarBrands.swift; sourceTree = "<group>"; };
+		E9D6C26928EE373C0087404F /* FirebaseCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = FirebaseCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E9F2653028EE1D4A005CF74A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		E9F2653228EE2F50005CF74A /* FirebaseCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = FirebaseCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +112,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		82E6804E6065E940ECECB33F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		E990D05928E1CBCA00027BFA = {
 			isa = PBXGroup;
 			children = (
@@ -99,6 +126,8 @@
 				E990D07B28E1CBCB00027BFA /* carExpensesTrackerTests */,
 				E990D08528E1CBCB00027BFA /* carExpensesTrackerUITests */,
 				E990D06328E1CBCA00027BFA /* Products */,
+				82E6804E6065E940ECECB33F /* Pods */,
+				F6278195F1E0164BD10C19CF /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -115,6 +144,7 @@
 		E990D06428E1CBCA00027BFA /* carExpensesTracker */ = {
 			isa = PBXGroup;
 			children = (
+				E9F2653028EE1D4A005CF74A /* GoogleService-Info.plist */,
 				E9A5933128EC37FF000FF2EB /* Extensions */,
 				E9A5932E28EC328D000FF2EB /* Utilites */,
 				E9CE18F828E585EE004A7676 /* Models */,
@@ -207,6 +237,16 @@
 			name = Models;
 			sourceTree = "<group>";
 		};
+		F6278195F1E0164BD10C19CF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E9D6C26928EE373C0087404F /* FirebaseCore.framework */,
+				E926886B28EE313D00EF0ED8 /* FirebaseCore.framework */,
+				E9F2653228EE2F50005CF74A /* FirebaseCore.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -217,6 +257,7 @@
 				E990D05E28E1CBCA00027BFA /* Sources */,
 				E990D05F28E1CBCA00027BFA /* Frameworks */,
 				E990D06028E1CBCA00027BFA /* Resources */,
+				E9D6C26F28EE37680087404F /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -313,6 +354,7 @@
 			files = (
 				E990D07228E1CBCB00027BFA /* LaunchScreen.storyboard in Resources */,
 				E990D06F28E1CBCB00027BFA /* Assets.xcassets in Resources */,
+				E926886F28EE319300EF0ED8 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
