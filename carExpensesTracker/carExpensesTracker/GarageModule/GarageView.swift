@@ -14,13 +14,12 @@ struct GarageView: View {
     @ObservedObject private var carViewModel = CarViewModel()
     
     var body: some View {
-        
         NavigationView {
-            Group {
-                ZStack {
-                    Image("garage")
-                        .resizable()
-                        .aspectRatio(contentMode: .fill).edgesIgnoringSafeArea(.all)
+            ZStack(alignment: .center) {
+                Image("garage")
+                    .resizable()
+                    .aspectRatio(contentMode: .fill).edgesIgnoringSafeArea(.all)
+            ScrollView(.vertical, showsIndicators: false) {
                     
                     VStack {
                         Button("Add your car") {
@@ -34,12 +33,9 @@ struct GarageView: View {
                         
                         // test
                         ForEach(carViewModel.cars, id: \.self) { car in
-                            VStack(alignment: .leading) {
-                                Text(car.brand).foregroundColor(Color.white)
-                                Text(car.model).foregroundColor(Color.white)
-                                Text("\(Constants.numberFormatter.string(for: car.productionYear) ?? "2022")").foregroundColor(Color.white)
-                                Text(car.mileage).foregroundColor(Color.white)
-                                Text(car.mileageState).foregroundColor(Color.white)
+                            VStack {
+                                CarItemView(car: car)
+                                    .padding()
                             }
                         }
                     }

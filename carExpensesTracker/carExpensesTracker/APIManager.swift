@@ -42,20 +42,22 @@ class APIManager {
 //            completion(doc)
 //        }
 //    }
-//    
-//    func getImage(picName: String, completion: @escaping (UIImage) -> Void) {
-//        let storage = Storage.storage()
-//        let reference = storage.reference()
-//        let pathRef = reference.child("pictures")
-//        
-//        var image: UIImage = UIImage(named: "default_pic")!
-//        
-//        let fileRef = pathRef.child(picName + ".jpeg")
-//        fileRef.getData(maxSize: 1024*1024) { data, error in
-//            guard error == nil else { completion(image); return }
-//            image = UIImage(data: data!)!
-//            completion(image)
-//        }
-//    }
+//
+    func getImage(category: String, brand: String, completion: @escaping (UIImage) -> Void) {
+        let storage = Storage.storage()
+        let reference = storage.reference()
+        let pathRef = reference.child(category)
+        var image = UIImage()
+        
+        let fileRef = pathRef.child(brand + ".png")
+        fileRef.getData(maxSize: 1024*1024) { data, error in
+            guard error == nil else { completion(image); return }
+            
+            if let reciviedData = data, let dataImage = UIImage(data: reciviedData) {
+                image = dataImage
+                completion(image)
+            }
+        }
+    }
 
 }

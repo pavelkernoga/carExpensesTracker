@@ -90,6 +90,7 @@ struct SetupFormView: View {
     
     private func getSelectedCarData() -> [String: Any] {
         let data: [String: Any] = [
+            "brand": "\(selectedBrand)".splitString(),
             "model": selectedModel,
             "year": yearOfProduction,
             "mileage": mileage,
