@@ -16,25 +16,8 @@ struct Expenses: View {
         VStack {
             Text("Expenses")
             
-//            Button("Show Image", action: show)
-//            Image(uiImage: self.image)
-//                    .resizable()
-//                    .scaledToFit()
-//            Text("\(field1)")
-            
         }
     }
-    
-//    func show() {
-//        APIManager.shared.getPost(collectrion: "cars", docName: "smallCar") { doc in
-//            guard doc != nil else { return }
-//            self.field1 = doc?.field1 ?? ""
-//        }
-//        
-//        APIManager.shared.getImage(picName: "C-class") { pic in
-//            self.image = pic
-//        }
-//    }
 }
 
 struct LogsView_Previews: PreviewProvider {

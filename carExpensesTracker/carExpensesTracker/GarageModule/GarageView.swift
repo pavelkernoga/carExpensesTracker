@@ -15,34 +15,73 @@ struct GarageView: View {
     
     var body: some View {
         NavigationView {
-            ZStack(alignment: .center) {
-                Image("garage")
-                    .resizable()
-                    .aspectRatio(contentMode: .fill).edgesIgnoringSafeArea(.all)
-            ScrollView(.vertical, showsIndicators: false) {
+            
+            // Empty garage view
+            if carViewModel.cars.count == 0 {
+                ZStack(alignment: .center) {
+                    Image("empty_garage")
+                        .resizable()
+                        .aspectRatio(contentMode: .fill).edgesIgnoringSafeArea(.all)
                     
-                    VStack {
-                        Button("Add your car") {
-                            showingCarForm.toggle()
-                        }
+                    Text("No available cars\nPlease add your car to the garage")
                         .multilineTextAlignment(.center)
                         .font(.headline)
-                        .sheet(isPresented: $showingCarForm) {
-                            SetupFormView()
+                        .foregroundColor(.white)
+                        .padding(.horizontal)
+                    
+                        .toolbar {
+                            ToolbarItem(placement: .navigationBarTrailing) {
+                                // add button
+                                Button(action: {
+                                    showingCarForm.toggle()
+                                }) {
+                                    Image("add_car")
+                                }
+                                .sheet(isPresented: $showingCarForm) {
+                                    SetupFormView()
+                                }
+                            }
                         }
-                        
-                        // test
-                        ForEach(carViewModel.cars, id: \.self) { car in
-                            VStack {
-                                CarItemView(car: car)
-                                    .padding()
+                }
+            } else {
+                // Existed cars in garage
+                ZStack(alignment: .center) {
+                    Image("garage")
+                        .resizable()
+                        .aspectRatio(contentMode: .fill).edgesIgnoringSafeArea(.all)
+                    
+                    ScrollView(.vertical, showsIndicators: false) {
+                        VStack() {
+                            ForEach(carViewModel.cars, id: \.self) { car in
+                                Button {
+                                    print("\(car.brand) tapped")
+                                } label: {
+                                    CarItemView(car: car)
+                                }
+                            }
+                            .padding()
+                            .background(.thinMaterial, in: RoundedRectangle(cornerRadius: 16.0))
+                        }
+                    }
+                    
+                    // Toolbar items
+                    .toolbar {
+                        ToolbarItemGroup(placement: .navigationBarTrailing) {
+                            Button(action: {
+                                showingCarForm.toggle()
+                            }) {
+                                Image("add_car")
+                            }
+                            .sheet(isPresented: $showingCarForm) {
+                                SetupFormView()
                             }
                         }
                     }
+                    
                 }
             }
-            
         }
+        
         .onAppear {
             self.carViewModel.fetchData()
         }

@@ -13,29 +13,30 @@ struct CarItemView: View {
     @State var carLogoImage = UIImage()
     
     var body: some View {
-        GroupBox {
-            HStack(alignment: .center, spacing: 16) {
-                Image(uiImage: carLogoImage)
-                    .resizable()
-                    .scaledToFit()
-                    .frame(width: 100, height: 100)
-                    .clipShape(RoundedRectangle(cornerRadius: 12))
-                VStack(alignment: .leading, spacing: 8) {
-                    Text("\(car.brand) \(car.model)")
-                        .font(.title2)
-                        .fontWeight(.heavy)
-                        .foregroundColor(.black)
-                    Text("\(Constants.numberFormatter.string(for: car.productionYear) ?? "2022"), \(car.mileage) \(car.mileageState)")
-                        .font(.footnote)
-                        .multilineTextAlignment(.leading)
-                        .lineLimit(3)
-                        .padding(.trailing, 8)
+            Group {
+                HStack(alignment: .center, spacing: 16) {
+                    Image(uiImage: carLogoImage)
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 100, height: 100)
+                        .clipShape(RoundedRectangle(cornerRadius: 12))
+                    VStack(alignment: .leading, spacing: 8) {
+                        Text("\(car.brand) \(car.model)")
+                            .font(.title2)
+                            .fontWeight(.heavy)
+                            .foregroundColor(.black)
+                        Text("\(Constants.numberFormatter.string(for: car.productionYear) ?? "2022"), \(car.mileage) \(car.mileageState)")
+                            .font(.footnote)
+                            .multilineTextAlignment(.leading)
+                            .lineLimit(3)
+                            .padding(.trailing, 8)
+                    }
                 }
+            .onAppear {
+                getCarLogoImagee(carBrand: car.brand)
             }
         }
-        .onAppear {
-            getCarLogoImagee(carBrand: car.brand)
-        }
+        
     }
     
     private func getCarLogoImagee(carBrand: String) {
