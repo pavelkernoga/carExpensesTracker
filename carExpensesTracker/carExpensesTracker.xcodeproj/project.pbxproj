@@ -34,6 +34,7 @@
 		E9CE18FA28E58607004A7676 /* CarBrands.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9CE18F928E58607004A7676 /* CarBrands.swift */; };
 		E9D6C26E28EE37680087404F /* (null) in Embed Frameworks */ = {isa = PBXBuildFile; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E9E7F6EB28F0C6BA00E3A664 /* CarItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9E7F6EA28F0C6BA00E3A664 /* CarItemView.swift */; };
+		E9FBF39128F80BC100E86921 /* ExpenseButtonsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9FBF39028F80BC100E86921 /* ExpenseButtonsView.swift */; };
 		FBEA9D58B36916B138E5CA30 /* Pods_carExpensesTracker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 787D40CD474BA6A8544A5AEE /* Pods_carExpensesTracker.framework */; };
 /* End PBXBuildFile section */
 
@@ -109,6 +110,7 @@
 		E9E7F6EA28F0C6BA00E3A664 /* CarItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarItemView.swift; sourceTree = "<group>"; };
 		E9F2653028EE1D4A005CF74A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		E9F2653228EE2F50005CF74A /* FirebaseCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = FirebaseCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E9FBF39028F80BC100E86921 /* ExpenseButtonsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseButtonsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -259,6 +261,7 @@
 			isa = PBXGroup;
 			children = (
 				E990D09D28E1CFB800027BFA /* Expenses.swift */,
+				E9FBF39028F80BC100E86921 /* ExpenseButtonsView.swift */,
 			);
 			path = ExpensesModule;
 			sourceTree = "<group>";
@@ -562,6 +565,7 @@
 				E990D06628E1CBCA00027BFA /* AppDelegate.swift in Sources */,
 				E901922E28EF5A630054C777 /* CarViewModel.swift in Sources */,
 				E9CE18FA28E58607004A7676 /* CarBrands.swift in Sources */,
+				E9FBF39128F80BC100E86921 /* ExpenseButtonsView.swift in Sources */,
 				E901923228EF89850054C777 /* FirebaseCarModel.swift in Sources */,
 				E99B335E28F4196700903281 /* String+Extension.swift in Sources */,
 				E9A5933E28ECBD13000FF2EB /* Car.swift in Sources */,

@@ -8,15 +8,34 @@
 import SwiftUI
 
 struct Expenses: View {
-//    @State var image = UIImage()
-//    @State var field1 = String(0)
-
+    @State var amountExpenses = 0
     
     var body: some View {
-        VStack {
-            Text("Expenses")
-            
+        ZStack(alignment: .center) {
+            Image("expenses")
+                .resizable()
+                .aspectRatio(contentMode: .fill).edgesIgnoringSafeArea(.all)
+            VStack {
+                Group {
+                    // Total expenses view
+                    VStack(alignment: .leading, spacing: 10) {
+                        Text("Amount of total spending").foregroundColor(.white).font(.largeTitle)
+                        Text("\(amountExpenses) $")
+                            .foregroundColor(.white)
+                            .font(.largeTitle)
+                    }
+                    .padding()
+                    
+                }
+                .frame(width: UIScreen.main.bounds.width - 25, alignment: .center)
+                .background(.thinMaterial, in: RoundedRectangle(cornerRadius: 16))
+                .padding()
+                
+                // Expenses buttons
+                ExpenseButtonsView()
+            }
         }
+        
     }
 }
 
