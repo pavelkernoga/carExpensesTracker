@@ -36,7 +36,7 @@ struct GarageView: View {
                                     HStack() {
                                         if editBtnTapped {
                                             Button {
-                                                APIManager.shared.removeCarData(brand: car.brand.removingWhitespaces())
+                                                APIManager.shared.removeCarData(id: car.id)
                                             } label: {
                                                 Image(systemName: "trash")
                                             }

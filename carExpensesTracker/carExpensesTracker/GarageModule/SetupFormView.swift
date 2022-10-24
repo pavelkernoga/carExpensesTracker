@@ -18,7 +18,8 @@ struct SetupFormView: View {
     @State var selectedModel: String = ""
     @State var yearOfProduction = Int()
     @State var mileage: String = ""
-    @State var mileageState: MileageStates = .km    
+    @State var mileageState: MileageStates = .km
+    @State var id = UUID()
     
     var body: some View {
         NavigationView {
@@ -84,7 +85,7 @@ struct SetupFormView: View {
     }
     
     private func saveButtonTapped() {
-        APIManager.shared.addCarData(brand: "\(selectedBrand)", data: getSelectedCarData())
+        APIManager.shared.addCarData(id: id, data: getSelectedCarData())
         self.presentationMode.wrappedValue.dismiss()
     }
     

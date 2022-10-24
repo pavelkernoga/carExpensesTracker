@@ -49,7 +49,7 @@ struct CarItemView: View {
 struct CarItemView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            CarItemView(car: .init(brand: "", model: "", productionYear: 0, mileage: "", mileageState: "km"))
+            CarItemView(car: .init(brand: "", model: "", productionYear: 0, mileage: "", mileageState: "km", id: ""))
         }
     }
 }

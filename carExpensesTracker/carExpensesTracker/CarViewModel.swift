@@ -27,7 +27,8 @@ class CarViewModel: ObservableObject {
                   let productionYear = data["year"] as? Int ?? 0
                   let mileage = data["mileage"] as? String ?? ""
                   let mileageState = data["mileageState"] as? String ?? ""
-                  return FirebaseCarModel(brand: brand, model: model, productionYear: productionYear, mileage: mileage, mileageState: mileageState)
+                  let id = queryDocumentSnapshot.documentID
+                  return FirebaseCarModel(brand: brand, model: model, productionYear: productionYear, mileage: mileage, mileageState: mileageState, id: id)
               }
           }
       }

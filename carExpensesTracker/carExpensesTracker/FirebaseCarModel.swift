@@ -14,4 +14,5 @@ struct FirebaseCarModel: Hashable {
     var productionYear: Int
     var mileage: String
     var mileageState: String
+    var id: String
 }

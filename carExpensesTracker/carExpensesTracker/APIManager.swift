@@ -23,8 +23,8 @@ class APIManager {
         return db
     }
     
-    func addCarData(brand: String, data: [String: Any]) {
-        let docRef = configureFB().collection("userCars").document(brand)
+    func addCarData(id: UUID, data: [String: Any]) {
+        let docRef = configureFB().collection("userCars").document(id.uuidString)
         docRef.setData(data) { error in
             guard error == nil else {
                 debugPrint(error?.localizedDescription as Any)
@@ -33,8 +33,8 @@ class APIManager {
         }
     }
     
-    func removeCarData(brand: String) {
-        let docRef = configureFB().collection("userCars").document(brand)
+    func removeCarData(id: String) {
+        let docRef = configureFB().collection("userCars").document(id)
         docRef.delete { error in
             guard error == nil else {
                 debugPrint(error?.localizedDescription as Any)
