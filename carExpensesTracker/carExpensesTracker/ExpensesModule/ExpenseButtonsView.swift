@@ -55,7 +55,7 @@ struct ExpenseButtonsView: View {
                 Button {
                     print("tax tapped")
                 } label: {
-                    setupButtonLabel(imageName: "tax", buttonTitle: "Tax", backgroundColor: .orange)
+                    setupButtonLabel(imageName: "tax", buttonTitle: "Taxes", backgroundColor: .orange)
                 }
                 
                 // Tuning button

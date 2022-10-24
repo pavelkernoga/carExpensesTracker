@@ -11,6 +11,7 @@ import grpc
 struct GarageView: View {
     
     @State private var showingCarForm: Bool = false
+    @State private var editBtnTapped: Bool = false
     @ObservedObject private var carViewModel = CarViewModel()
     
     var body: some View {
@@ -18,31 +19,7 @@ struct GarageView: View {
             
             // Empty garage view
             if carViewModel.cars.count == 0 {
-                ZStack(alignment: .center) {
-                    Image("empty_garage")
-                        .resizable()
-                        .aspectRatio(contentMode: .fill).edgesIgnoringSafeArea(.all)
-                    
-                    Text("No available cars\nPlease add your car to the garage")
-                        .multilineTextAlignment(.center)
-                        .font(.headline)
-                        .foregroundColor(.white)
-                        .padding(.horizontal)
-                    
-                        .toolbar {
-                            ToolbarItem(placement: .navigationBarTrailing) {
-                                // add button
-                                Button(action: {
-                                    showingCarForm.toggle()
-                                }) {
-                                    Image("add_car")
-                                }
-                                .sheet(isPresented: $showingCarForm) {
-                                    SetupFormView()
-                                }
-                            }
-                        }
-                }
+                EmptyGarageView()
             } else {
                 // Existed cars in garage
                 ZStack(alignment: .center) {
@@ -51,14 +28,28 @@ struct GarageView: View {
                         .aspectRatio(contentMode: .fill).edgesIgnoringSafeArea(.all)
                     
                     ScrollView(.vertical, showsIndicators: false) {
-                        VStack() {
+                        Group {
                             ForEach(carViewModel.cars, id: \.self) { car in
                                 Button {
                                     print("\(car.brand) tapped")
                                 } label: {
-                                    CarItemView(car: car)
+                                    HStack() {
+                                        if editBtnTapped {
+                                            Button {
+                                                APIManager.shared.removeCarData(brand: car.brand.removingWhitespaces())
+                                            } label: {
+                                                Image(systemName: "trash")
+                                            }
+                                            .frame(width: 50, height: 50, alignment: .center)
+                                            .buttonStyle(.borderedProminent)
+                                            .tint(.red)
+                                            Divider()
+                                        }
+                                        CarItemView(car: car)
+                                    }
                                 }
                             }
+                            .frame(width: 300, height: 120, alignment: .leading)
                             .padding()
                             .background(.thinMaterial, in: RoundedRectangle(cornerRadius: 16.0))
                         }
@@ -66,6 +57,14 @@ struct GarageView: View {
                     
                     // Toolbar items
                     .toolbar {
+                        ToolbarItemGroup(placement: .navigationBarLeading) {
+                            Button(action: {
+                                editBtnTapped.toggle()
+                            }) {
+                                Image(self.editBtnTapped == true ? "close" : "edit")
+                            }
+                        }
+                        
                         ToolbarItemGroup(placement: .navigationBarTrailing) {
                             Button(action: {
                                 showingCarForm.toggle()

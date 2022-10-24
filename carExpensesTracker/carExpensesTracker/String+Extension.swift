@@ -16,4 +16,8 @@ extension String {
         let outputString = regexp.stringByReplacingMatches(in: reciviedString, options: [], range: range, withTemplate: "$1 $2")
         return outputString
     }
+
+    func removingWhitespaces() -> String {
+        return components(separatedBy: .whitespaces).joined()
+    }
 }

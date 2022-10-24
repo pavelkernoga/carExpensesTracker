@@ -9,6 +9,7 @@ import SwiftUI
 
 struct Expenses: View {
     @State var amountExpenses = 0
+    @ObservedObject private var carViewModel = CarViewModel()
     
     var body: some View {
         ZStack(alignment: .center) {

@@ -33,6 +33,17 @@ class APIManager {
         }
     }
     
+    func removeCarData(brand: String) {
+        let docRef = configureFB().collection("userCars").document(brand)
+        docRef.delete { error in
+            guard error == nil else {
+                debugPrint(error?.localizedDescription as Any)
+                return
+            }
+            debugPrint("car item removed")
+        }
+    }
+    
     // test
 //    func getPost(collectrion: String, docName: String, completion: @escaping (Document?) -> Void) {
 //        let db = configureFB()
@@ -59,5 +70,7 @@ class APIManager {
             }
         }
     }
+    
+ 
 
 }

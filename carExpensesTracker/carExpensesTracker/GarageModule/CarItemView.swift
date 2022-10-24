@@ -9,7 +9,6 @@ import SwiftUI
 
 struct CarItemView: View {
     @State var car: FirebaseCarModel
-    @ObservedObject private var carViewModel = CarViewModel()
     @State var carLogoImage = UIImage()
     
     var body: some View {
