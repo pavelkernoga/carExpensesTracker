@@ -29,16 +29,17 @@ struct CarItemView: View {
                             .multilineTextAlignment(.leading)
                             .lineLimit(3)
                             .padding(.trailing, 8)
+                            .foregroundColor(.black)
                     }
                 }
             .onAppear {
-                getCarLogoImagee(carBrand: car.brand)
+                getCarLogoImage(carBrand: car.brand)
             }
         }
         
     }
     
-    private func getCarLogoImagee(carBrand: String) {
+    private func getCarLogoImage(carBrand: String) {
         APIManager.shared.getImage(category: "carLogo", brand: carBrand) { response in
              carLogoImage = response
         }

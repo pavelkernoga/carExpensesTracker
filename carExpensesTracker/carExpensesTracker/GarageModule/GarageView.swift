@@ -10,48 +10,38 @@ import grpc
 
 struct GarageView: View {
     
-    @State private var showingCarForm: Bool = false
-    @State private var editBtnTapped: Bool = false
+    @State var showingCarForm: Bool = false
     @ObservedObject private var carViewModel = CarViewModel()
+    @ObservedObject private var garageViewModel = GarageViewModel()
     
     var body: some View {
         NavigationView {
-            
             // Empty garage view
             if carViewModel.cars.count == 0 {
                 EmptyGarageView()
             } else {
                 // Existed cars in garage
                 ZStack(alignment: .center) {
-                    Image("garage")
+                    Image(garageViewModel.backgroundImage)
                         .resizable()
                         .aspectRatio(contentMode: .fill).edgesIgnoringSafeArea(.all)
                     
                     ScrollView(.vertical, showsIndicators: false) {
-                        Group {
-                            ForEach(carViewModel.cars, id: \.self) { car in
-                                Button {
-                                    print("\(car.brand) tapped")
-                                } label: {
-                                    HStack() {
-                                        if editBtnTapped {
-                                            Button {
-                                                APIManager.shared.removeCarData(id: car.id)
-                                            } label: {
-                                                Image(systemName: "trash")
-                                            }
-                                            .frame(width: 50, height: 50, alignment: .center)
-                                            .buttonStyle(.borderedProminent)
-                                            .tint(.red)
-                                            Divider()
-                                        }
-                                        CarItemView(car: car)
+                        ForEach(carViewModel.cars, id: \.self) { car in
+                            Button {
+                                debugPrint("\(car.brand) selected, car id: \(car.id)")
+                                garageViewModel.selectedCar = car
+                            } label: {
+                                HStack() {
+                                    if garageViewModel.editBtnTapped {
+                                        garageViewModel.showDeleteButton(car: car)
                                     }
+                                    CarItemView(car: car)
                                 }
                             }
                             .frame(width: 300, height: 120, alignment: .leading)
                             .padding()
-                            .background(.thinMaterial, in: RoundedRectangle(cornerRadius: 16.0))
+                            .background(garageViewModel.selectedCar == car ? .ultraThickMaterial: .thinMaterial, in: RoundedRectangle(cornerRadius: 16.0))
                         }
                     }
                     
@@ -59,9 +49,9 @@ struct GarageView: View {
                     .toolbar {
                         ToolbarItemGroup(placement: .navigationBarLeading) {
                             Button(action: {
-                                editBtnTapped.toggle()
+                                garageViewModel.editBtnTapped.toggle()
                             }) {
-                                Image(self.editBtnTapped == true ? "close" : "edit")
+                                Image(garageViewModel.setupEditBtnImage())
                             }
                         }
                         
@@ -69,14 +59,13 @@ struct GarageView: View {
                             Button(action: {
                                 showingCarForm.toggle()
                             }) {
-                                Image("add_car")
+                                Image(garageViewModel.addBtnImage)
                             }
                             .sheet(isPresented: $showingCarForm) {
                                 SetupFormView()
                             }
                         }
                     }
-                    
                 }
             }
         }
@@ -86,7 +75,7 @@ struct GarageView: View {
         }
     }
     
-    func addBtnTapped() {
+    private func addBtnTapped() {
         showingCarForm = true
     }
 }

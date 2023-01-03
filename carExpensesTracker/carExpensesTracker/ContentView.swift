@@ -19,7 +19,7 @@ struct ContentView: View {
                 }
                 .tag(0)
             
-            Expenses()
+            ExpensesView()
                 .tabItem {
                    Label("Expenses", image: "wallet")
                 }

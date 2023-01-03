@@ -43,17 +43,7 @@ class APIManager {
             debugPrint("car item removed")
         }
     }
-    
-    // test
-//    func getPost(collectrion: String, docName: String, completion: @escaping (Document?) -> Void) {
-//        let db = configureFB()
-//        db.collection(collectrion).document(docName).getDocument { document, error in
-//            guard error == nil else { completion(nil); return }
-//            let doc = Document(field1: (document?.get("field1") as? String)!, field2: document?.get("field2") as! String)
-//            completion(doc)
-//        }
-//    }
-//
+
     func getImage(category: String, brand: String, completion: @escaping (UIImage) -> Void) {
         let storage = Storage.storage()
         let reference = storage.reference()
@@ -71,6 +61,4 @@ class APIManager {
         }
     }
     
- 
-
 }
